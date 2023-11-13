@@ -35,9 +35,17 @@ public class Main {
         } catch (Exception exp) {
             System.out.println("Invalid input.");
         }
-        System.out.println("area Test2");
-        System.out.println(area(5.0)); //78.53975
-        System.out.println(area(-1)); //-1
+
+        try {
+            System.out.println("Enter radius of the circle > ");
+            double radius = scanner.nextDouble();
+            double areaCircle = area(radius);
+
+            if ( areaCircle == - 1 )
+                System.out.println("Invalid input");
+            else
+                System.out.println("Area of the rectangle is " + areaCircle);
+
         } catch (Exception exp) {
             System.out.println("Invalid input.");
         }
