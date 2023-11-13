@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -17,13 +19,28 @@ public class Main {
         System.out.println(isCatPlaying(false, 36)); //false
         System.out.println(isCatPlaying(false, 35)); // true
 
-        System.out.println("area Test1");
-        System.out.println(area(5.0, 4.0)); //20.0
-        System.out.println(area(-1.0, 4.0)); //-1
+        Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.println("Enter width of the rectangle > ");
+            double width = scanner.nextDouble();
+            System.out.println("Enter height of the rectangle > ");
+            double height = scanner.nextDouble();
+            double areaRectangle = area(width, height);
 
+            if ( areaRectangle == - 1 )
+                System.out.println("Invalid input");
+            else
+                System.out.println("Area of the rectangle is " + areaRectangle);
+
+        } catch (Exception exp) {
+            System.out.println("Invalid input.");
+        }
         System.out.println("area Test2");
         System.out.println(area(5.0)); //78.53975
         System.out.println(area(-1)); //-1
+        } catch (Exception exp) {
+            System.out.println("Invalid input.");
+        }
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int hour) {
@@ -39,8 +56,8 @@ public class Main {
 
 
     public static boolean inAgeLimit(int age) {
-        int ageMax = 19;
-        int ageMin = 13;
+        final int ageMax = 19;
+        final int ageMin = 13;
 
         return age >=ageMin && age <= ageMax;
     }
@@ -62,12 +79,12 @@ public class Main {
         return minTemp <= temp && maxTemp >= temp;
     }
 
-    public static double area(double x1, double x2) {
+    public static double area(double width, double height) {
 
-        if( x1 < 0 || x2 < 0)
+        if( width < 0 || height < 0)
             return -1;
 
-        return  x1 * x2;
+        return  width * height;
     }
 
     public  static double area(double radius) {
