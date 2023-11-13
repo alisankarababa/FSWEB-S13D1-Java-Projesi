@@ -16,6 +16,14 @@ public class Main {
         System.out.println(isCatPlaying(true, 10)); //false
         System.out.println(isCatPlaying(false, 36)); //false
         System.out.println(isCatPlaying(false, 35)); // true
+
+        System.out.println("area Test1");
+        System.out.println(area(5.0, 4.0)); //20.0
+        System.out.println(area(-1.0, 4.0)); //-1
+
+        System.out.println("area Test2");
+        System.out.println(area(5.0)); //78.53975
+        System.out.println(area(-1)); //-1
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int hour) {
@@ -52,5 +60,21 @@ public class Main {
 
 
         return minTemp <= temp && maxTemp >= temp;
+    }
+
+    public static double area(double x1, double x2) {
+
+        if( x1 < 0 || x2 < 0)
+            return -1;
+
+        return  x1 * x2;
+    }
+
+    public  static double area(double radius) {
+
+        if(radius < 0)
+            return -1;
+
+        return radius * radius * Math.PI;
     }
 }
